@@ -8,6 +8,12 @@ function toggleDarkMode() {
     localStorage.setItem('darkmode', isDarkModeEnabled);
 
     document.title = isDarkModeEnabled ? 'Dark Mode' : 'Light Mode';
+    
+    if (isDarkModeEnabled) {
+        toggle.style.color = '#fff';
+    } else {
+        toggle.style.color = '#000';
+    }
 }
 
 toggle.addEventListener('click', toggleDarkMode);
@@ -24,6 +30,7 @@ window.addEventListener('load', () => {
         document.body.classList.add('dark-mode');
         document.title = 'Dark Mode';
         toggle.setAttribute('title', 'Change to Light Mode');
+        toggle.style.color = '#fff';
     } else {
         document.body.classList.remove('dark-mode');
         document.title = 'Light Mode';
